@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "mvml-assignment"
+version = "0.1.0"
+description = ""
+authors = ["nerdai <andrei@nerdai.io>"]
+readme = "README.md"
+packages = [{include = "mvml_assignment"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
