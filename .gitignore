@@ -1,6 +1,6 @@
 # datafiles
+artifacts/
 /data/
-/preds/
 
 # jupyter
 */.ipynb_checkpoints

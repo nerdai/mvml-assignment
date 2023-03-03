@@ -10,6 +10,7 @@ The general approach taken is as follows:
 3. model is pickled for future inference
 """
 
+from pathlib import Path
 from joblib import dump
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
@@ -43,7 +44,8 @@ def train():
     print(metrics.classification_report(train_df.label, preds))
 
     # save model
-    dump(model, 'model.joblib')
+    parent_dir = Path().resolve()
+    dump(model, f'{parent_dir}/artifacts/models/model.joblib')
 
 
 if __name__ == "__main__":
