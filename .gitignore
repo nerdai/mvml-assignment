@@ -1,3 +1,9 @@
+# datafiles
 /data/
+
+# jupyter
 */.ipynb_checkpoints
 .DS_Store
+
+# model artifacts
+*.joblib
