@@ -11,6 +11,7 @@ The general approach taken is as follows:
 """
 
 import pandas as pd
+from joblib import dump
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.linear_model import SGDClassifier
@@ -53,6 +54,9 @@ def train():
     # metrics
     preds = model.predict(train_df.text)
     print(metrics.classification_report(train_df.label, preds))
+
+    # save model
+    dump(model, 'model.joblib')
 
 
 if __name__ == "__main__":
