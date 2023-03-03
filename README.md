@@ -11,6 +11,7 @@ tokenization of step 2 as well as the final predictive SVM model.
 
 ## The Project Structure
 ```
+mvml-assignment/
     data/
         labels.csv
         test.csv
@@ -39,11 +40,11 @@ tokenization of step 2 as well as the final predictive SVM model.
         preds/
             predictions.csv
 ```
+*(Note: `data` and `artifacts` are not checked into Github.)*
 
-**Summary:**
-
+#### Summmary of Code
 - `data_cleaner.py` is used to filter out the bad training observations from the
-`train.df` and store the resulting DataFrame as a `clean_train.csv`
+`train.df` and store the resulting DataFrame as a `clean_train.csv`.
 - `training.py` fits the sklearn `Pipeline` on the `clean_train.csv` and dumps
 the binary model in `artifacts/models` directory.
 - `inference.py` loads the trained model and takes as input a new data file
@@ -54,7 +55,8 @@ the classification report.
 - `Dockerfile` used dockerize the ML model for ease of deployment and
 reproducibility.
 
-The current model (and pipeline) achieves the below metrics:
+#### Model Performance
+The current model (and pipeline) achieves the below metrics on the test set:
 
 ```
               precision    recall  f1-score   support
