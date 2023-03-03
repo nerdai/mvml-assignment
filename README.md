@@ -13,10 +13,11 @@ tokenization of step 2 as well as the final predictive SVM model.
 ```
 mvml-assignment/
     ¹²data/
-        labels.csv
-        test.csv
-        train.csv
-        clean_train.csv
+        fake_news/
+            labels.csv
+            test.csv
+            train.csv
+            clean_train.csv
     src/
         __init__.py
         data_cleaner.py
