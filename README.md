@@ -1,3 +1,72 @@
+# Overview
+Listed below are the high-level descriptions taken to build the ML model.
+
+1. Training data was filtered to remove any observations with empty `text` field
+2. The text field was tokenized using Bag of Words and after TD-IDF
+3. An SVM model was built on top of the tokenized features.
+
+The Python library used here was `sklearn`. In particular we made use of the
+`Pipeline` constructs in order to stack the two transformers to perform the
+tokenization of step 2 as well as the final predictive SVM model.
+
+## The Project Structure
+```
+    data/
+        labels.csv
+        test.csv
+        train.csv
+        clean_train.csv
+    src/
+        __init__.py
+        data_cleaner.py
+        get_metrics.py
+        inference.py
+        training.py
+    tests/
+        __init__.py
+    utils/
+        data_loader.py
+        __init__.py
+    notebooks/
+        sandbox.ipynb
+    setup.sh
+    poetry.lock
+    pyproject.toml
+    Dockerfile
+    artifacts/
+        models/
+            model.joblib
+        preds/
+            predictions.csv
+```
+
+**Summary:**
+
+- `data_cleaner.py` is used to filter out the bad training observations from the
+`train.df` and store the resulting DataFrame as a `clean_train.csv`
+- `training.py` fits the sklearn `Pipeline` on the `clean_train.csv` and dumps
+the binary model in `artifacts/models` directory.
+- `inference.py` loads the trained model and takes as input a new data file
+to make batch predictions that are stored in local in the `artifacts/preds`
+directory.
+- `get_metrics.py` takes a `predictions.csv` file and `labels.csv` and produces
+the classification report.
+- `Dockerfile` used dockerize the ML model for ease of deployment and
+reproducibility.
+
+The current model (and pipeline) achieves the below metrics:
+
+```
+              precision    recall  f1-score   support
+
+           0       0.60      0.66      0.63      2339
+           1       0.70      0.63      0.66      2854
+
+    accuracy                           0.65      5193
+   macro avg       0.65      0.65      0.65      5193
+weighted avg       0.65      0.65      0.65      5193
+```
+
 ### Commands
 Training model:
 ```
