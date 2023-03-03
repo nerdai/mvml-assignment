@@ -113,6 +113,11 @@ curl -sSL https://install.python-poetry.org | python3 -
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
 ```
 
+Install dependencies:
+```
+poetry install
+```
+
 Cleaning data:
 ```
 poetry run python -m src.data_cleaner
