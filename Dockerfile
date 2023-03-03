@@ -1,4 +1,5 @@
-FROM python:3.11
+FROM python:3.11-slim as python
+WORKDIR /
 
 # Configure Poetry
 ENV POETRY_VERSION=1.3.2
@@ -14,16 +15,17 @@ RUN python3 -m venv $POETRY_VENV \
 # Add `poetry` to PATH
 ENV PATH="${PATH}:${POETRY_VENV}/bin"
 
-WORKDIR /
-RUN mkdir preds
-
 # Install dependencies
 COPY poetry.lock pyproject.toml ./
-RUN poetry check
-
 RUN poetry install --no-interaction --no-cache --without dev --no-root 
 
-# Run your app
-COPY . /
+# Copy source code and training data
+COPY ./src/ /src
+COPY ./utils/ /utils
+COPY ./data/fake_news/clean_train.csv /data/fake_news/clean_train.csv
+
+# Build model and store artifact in docker image
 RUN poetry run python3 -m src.training
-# CMD [ "poetry", "run", "python", "-c", "print('Hello, World!')" ]
+
+# Make dir in docker container for future inference
+RUN mkdir preds
