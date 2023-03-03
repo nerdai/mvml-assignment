@@ -23,10 +23,11 @@ RUN poetry install --no-interaction --no-cache --without dev --no-root
 COPY ./setup.sh /setup.sh
 COPY ./src/ /src
 COPY ./utils/ /utils
-COPY ./data/fake_news/clean_train.csv /data/fake_news/clean_train.csv
+COPY ./data/fake_news/train.csv /data/fake_news/train.csv
 RUN sh setup.sh
 
 # Build model and store artifact in docker image
+RUN poetry run python -m src.data_cleaner
 RUN poetry run python3 -m src.training
 
 # Make dir in docker container for future inference

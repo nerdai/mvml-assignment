@@ -72,7 +72,16 @@ The current model (and pipeline) achieves the below metrics on the test set:
 weighted avg       0.65      0.65      0.65      5193
 ```
 
-### Commands
+## Commands
+### Without Docker
+
+As a an initial step, run `setup.sh` which creates the required directories.
+
+Cleaning data:
+```
+poetry run python -m src.data_cleaner
+```
+
 Training model:
 ```
 poetry run python -m src.training 
@@ -80,8 +89,15 @@ poetry run python -m src.training
 
 Inference with model:
 ```
-poetry run python -m src.inference
+poetry run python -m src.inference --data ./data/fake_news/test.csv
 ```
+
+Get metrics of test set:
+```
+poetry run python -m src.get_metrics --labels ./data/fake_news/labels.csv \
+--preds ./artifacts/preds/predictions.csv
+```
+
 
 ### With Docker
 
@@ -93,10 +109,12 @@ docker build -f Dockerfile . -t mvml-assignment
 **Run docker image (inference)**
 ```
 # inference
-docker run -v <local-data-path>:/data -v <local-preds-path>:/preds mvml-assignment poetry run python -m src.inference --data ./data/fake_news/test.csv
+docker run -v <local-data-path>:/data -v <local-preds-path>:/preds \
+mvml-assignment poetry run python -m src.inference \
+--data ./data/fake_news/test.csv
 
 # get metrics
-docker run -v <local-data-path>:/data -v <local-preds-path>:/preds mvml-assignment poetry run python -m src.get_metrics --labels ./data/fake_news/labels.csv --preds ./preds/preditiction.csv
+docker run -v <local-data-path>:/data -v <local-preds-path>:/preds \
+mvml-assignment poetry run python -m src.get_metrics \
+--labels ./data/fake_news/labels.csv --preds ./preds/preditiction.csv
 ```
-
-
