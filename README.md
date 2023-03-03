@@ -80,6 +80,17 @@ weighted avg       0.65      0.65      0.65      5193
 ### Without Docker
 
 As a an initial step, run `setup.sh` which creates the required directories.
+Note also that `poetry` cli must be installed on the machine if running without
+docker. 
+
+Install `poetry`:
+```
+# for linux, macOS
+curl -sSL https://install.python-poetry.org | python3 -
+
+# windows (powershell)
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+```
 
 Cleaning data:
 ```
