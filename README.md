@@ -80,8 +80,8 @@ weighted avg       0.65      0.65      0.65      5193
 ### Without Docker
 
 As a an initial step, run `setup.sh` which creates the required directories.
-Note also that `poetry` cli must be installed on the machine if running without
-docker. 
+Note also that `poetry` (`v. ^1.3.0`) cli must be installed on the machine if 
+running without docker. 
 
 Install `poetry`:
 ```

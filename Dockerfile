@@ -2,7 +2,7 @@ FROM python:3.11-slim as python
 WORKDIR /
 
 # Configure Poetry
-ENV POETRY_VERSION=1.3.2
+ENV POETRY_VERSION=1.4.0
 ENV POETRY_HOME=/opt/poetry
 ENV POETRY_VENV=/opt/poetry-venv
 ENV POETRY_CACHE_DIR=/opt/.cache
