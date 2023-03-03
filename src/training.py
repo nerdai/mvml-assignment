@@ -10,14 +10,13 @@ The general approach taken is as follows:
 3. model is pickled for future inference
 """
 
-import pandas as pd
-from utils.data_loader import data_loader
 from joblib import dump
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.linear_model import SGDClassifier
 from sklearn import metrics
 from sklearn.pipeline import Pipeline
+from utils.data_loader import data_loader
 
 
 def train():
@@ -26,7 +25,7 @@ def train():
     binary for later use.
     """
     # load data
-    train_df = pd.read_csv("./data/fake_news/clean_train.csv")
+    train_df = data_loader("./data/fake_news/clean_train.csv")
 
     # pipeline
     model = Pipeline([

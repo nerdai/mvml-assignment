@@ -6,9 +6,9 @@ The predictions are saved as .csv in local.
 """
 
 import pandas as pd
-from utils.data_loader import data_loader
 from joblib import load
 from sklearn import metrics
+from utils.data_loader import data_loader
 
 
 def inference():
@@ -17,12 +17,12 @@ def inference():
     binary for later use.
     """
     # load data
-    df = pd.read_csv("./data/fake_news/test.csv")
-    labels = pd.read_csv("./data/fake_news/labels.csv")
+    new_df = data_loader("./data/fake_news/test.csv")
+    labels = data_loader("./data/fake_news/labels.csv")
 
     # some cleaning
-    df_clean = df[~df["text"].isna()]
-    df_dirty = df[df["text"].isna()]
+    df_clean = new_df[~new_df["text"].isna()]
+    df_dirty = new_df[new_df["text"].isna()]
 
     # load model
     model = load('model.joblib')
@@ -33,6 +33,8 @@ def inference():
     # metrics
     df_clean = pd.merge(df_clean, labels, on="id")
     print(metrics.classification_report(df_clean.label, preds))
+    print(f"{df_dirty.shape[0]} observations had no `text` field and thus \
+were not predicted.")
 
     # save preds
     df_clean["pred"] = preds
