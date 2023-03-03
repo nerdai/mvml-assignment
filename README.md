@@ -109,12 +109,12 @@ docker build -f Dockerfile . -t mvml-assignment
 **Run docker image (inference)**
 ```
 # inference
-docker run -v <local-data-path>:/data -v <local-preds-path>:/preds \
+docker run -v "$(pwd)/data/":/data -v "$(pwd)/artifacts/preds/":/artifacts/preds \
 mvml-assignment poetry run python -m src.inference \
 --data ./data/fake_news/test.csv
 
 # get metrics
-docker run -v <local-data-path>:/data -v <local-preds-path>:/preds \
+docker run -v "$(pwd)/data/":/data -v "$(pwd)/artifacts/preds/":/artifacts/preds \
 mvml-assignment poetry run python -m src.get_metrics \
---labels ./data/fake_news/labels.csv --preds ./preds/preditiction.csv
+--labels ./data/fake_news/labels.csv --preds ./artifacts/preds/predictions.csv 
 ```
