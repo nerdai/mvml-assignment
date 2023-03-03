@@ -2,7 +2,7 @@
 Listed below are the high-level descriptions taken to build the ML model.
 
 1. Training data was filtered to remove any observations with empty `text` field
-2. The text field was tokenized using Bag of Words and after TD-IDF
+2. The text field was tokenized using Bag of Words and subsequently TF-IDF
 3. An SVM model was built on top of the tokenized features.
 
 The Python library used here was `sklearn`. In particular we made use of the
@@ -39,6 +39,7 @@ mvml-assignment/
             model.joblib
         preds/
             predictions.csv
+    COMMENTARY.md
 ```
 ¹ `data` and `artifacts` are not checked into Github
 
@@ -57,6 +58,9 @@ directory.
 the classification report.
 - `Dockerfile` used dockerize the ML model for ease of deployment and
 reproducibility.
+- `COMMENTARY.md` contains discussions around the requested topics (i.e., on
+overall approach, preprocessing, performance and metrics, and aspects that
+can be improves).
 
 #### Model Performance
 The current model (and pipeline) achieves the below metrics on the test set:
