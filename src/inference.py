@@ -31,7 +31,7 @@ def inference():
 
     if not df_dirty.empty():
         print(f"{df_dirty.shape[0]} observations had no `text` field and thus \
-    were not predicted.")
+were not predicted.")
 
 
 if __name__ == "__main__":
