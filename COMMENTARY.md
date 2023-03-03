@@ -1,7 +1,7 @@
 ## On the overall approach
 
 source of inspiration: 
-- <https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html#loading-the-20-newsgroups-dataset>
+- <https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html#working-with-text-data>
 
 ## On preprocessing steps
 
