@@ -1,3 +1,7 @@
+"""
+Utils module containing utility functions used by other modules.
+"""
+
 import pandas as pd
 
 def data_loader(train_csv_path: str) -> pd.DataFrame:
