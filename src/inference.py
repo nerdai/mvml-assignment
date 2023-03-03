@@ -34,6 +34,10 @@ def inference():
     df_clean = pd.merge(df_clean, labels, on="id")
     print(metrics.classification_report(df_clean.label, preds))
 
+    # save preds
+    df_clean["pred"] = preds
+    df_clean[["id", "pred"]].to_csv("./preds/predictions.csv", index=False)
+
 
 if __name__ == "__main__":
     inference()
