@@ -12,7 +12,7 @@ tokenization of step 2 as well as the final predictive SVM model.
 ## The Project Structure
 ```
 mvml-assignment/
-    data/
+    data¹²/
         labels.csv
         test.csv
         train.csv
@@ -34,13 +34,15 @@ mvml-assignment/
     poetry.lock
     pyproject.toml
     Dockerfile
-    artifacts/
+    artifacts¹/
         models/
             model.joblib
         preds/
             predictions.csv
 ```
-*(Note: `data` and `artifacts` are not checked into Github.)*
+¹ `data` and `artifacts` are not checked into Github
+² `data` directory and its data files need to be placed within this structure
+to be able to run the pipeline.
 
 #### Summmary of Code
 - `data_cleaner.py` is used to filter out the bad training observations from the
