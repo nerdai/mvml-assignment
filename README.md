@@ -84,7 +84,7 @@ As a an initial step, run `setup.sh` which creates the required directories.
 Note also that `poetry` (`v. ^1.3.0`) cli must be installed on the machine if 
 running without docker. 
 
-Install `poetry`:
+Install (or upgrading) `poetry`:
 ```
 # for linux, macOS
 curl -sSL https://install.python-poetry.org | python3 -
