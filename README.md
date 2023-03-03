@@ -101,8 +101,8 @@ mvml-assignment poetry run python -m src.get_metrics \
 ### Without Docker
 
 As a an initial step, run `setup.sh` which creates the required directories.
-Note also that `poetry` (`v. ^1.3.0`) cli must be installed on the machine if 
-running without docker. 
+Note also that `poetry` (`v. ^1.3.0`) cli must be installed and the active
+python version must be `v. ^3.11.0` if running without docker. 
 
 Install (or upgrading) `poetry`:
 ```
