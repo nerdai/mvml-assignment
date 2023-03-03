@@ -41,6 +41,7 @@ mvml-assignment/
             predictions.csv
 ```
 ¹ `data` and `artifacts` are not checked into Github
+
 ² `data` directory and its data files need to be placed within this structure
 to be able to run the pipeline.
 
