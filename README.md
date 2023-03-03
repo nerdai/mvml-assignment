@@ -12,7 +12,7 @@ tokenization of step 2 as well as the final predictive SVM model.
 ## The Project Structure
 ```
 mvml-assignment/
-    data¹²/
+    ¹²data/
         labels.csv
         test.csv
         train.csv
@@ -34,7 +34,7 @@ mvml-assignment/
     poetry.lock
     pyproject.toml
     Dockerfile
-    artifacts¹/
+    ¹artifacts/
         models/
             model.joblib
         preds/
