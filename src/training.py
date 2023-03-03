@@ -11,25 +11,13 @@ The general approach taken is as follows:
 """
 
 import pandas as pd
+from utils.data_loader import data_loader
 from joblib import dump
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.linear_model import SGDClassifier
 from sklearn import metrics
 from sklearn.pipeline import Pipeline
-
-
-def data_loader(train_csv_path: str) -> pd.DataFrame:
-    """
-    Utility function for loading a csv into a pd.DataFrame
-
-    params:
-    [] train_csv_path: str
-
-    returns:
-    [] pd.DataFrame
-    """
-    return pd.read_csv(train_csv_path)
 
 
 def train():

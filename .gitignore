@@ -7,3 +7,6 @@
 
 # model artifacts
 *.joblib
+
+# python cache
+*/__pycache__
