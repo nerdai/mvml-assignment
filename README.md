@@ -11,37 +11,45 @@ tokenization of step 2 as well as the final predictive SVM model.
 
 ## The Project Structure
 ```
-mvml-assignment/
-    ¹²data/
-        fake_news/
-            labels.csv
-            test.csv
-            train.csv
-            clean_train.csv
-    src/
-        __init__.py
-        data_cleaner.py
-        get_metrics.py
-        inference.py
-        training.py
-    tests/
-        __init__.py
-        test_mvml_assignment.py
-    utils/
-        data_loader.py
-        __init__.py
-    notebooks/
-        sandbox.ipynb
-    setup.sh
-    poetry.lock
-    pyproject.toml
-    Dockerfile
-    ¹artifacts/
-        models/
-            model.joblib
-        preds/
-            predictions.csv
-    COMMENTARY.md
+mvml-assignment
+├── setup.sh
+├── artifacts¹
+│   ├── models
+│   │   └── model.joblib
+│   └── preds
+│       └── predictions.csv
+├── data¹²
+│   └── fake_news
+│       ├── labels.csv
+│       ├── test.csv
+│       ├── train.csv
+│       └── clean_train.csv
+├── COMMENTARY.md
+├── Dockerfile
+├── README.md
+├── .gitignore
+├── poetry.lock
+├── pyproject.toml
+├── notebooks
+│   └── sandbox.ipynb
+├── utils
+│   ├── data_loader.py
+│   ├── __init__.py
+├── tests
+│   ├── __init__.py
+│   └── test_mvml_assignment.py
+└── src
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── training.cpython-311.pyc
+    │   ├── inference.cpython-311.pyc
+    │   ├── get_metrics.cpython-311.pyc
+    │   ├── __init__.cpython-311.pyc
+    │   └── data_cleaner.cpython-311.pyc
+    ├── data_cleaner.py
+    ├── get_metrics.py
+    ├── inference.py
+    └── training.py
 ```
 ¹ `data` and `artifacts` are not checked into Github
 
