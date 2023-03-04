@@ -145,3 +145,8 @@ Get metrics of test set:
 poetry run python -m src.get_metrics --labels ./data/fake_news/labels.csv \
 --preds ./artifacts/preds/predictions.csv
 ```
+
+### Testing
+```
+poetry run pytest ./tests/*
+```
