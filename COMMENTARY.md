@@ -87,6 +87,8 @@ complete pipeline.
         MLFlow and Weights and Biases can be used.
     - The Docker image is a bit clunky, and there are further optmizations that
     can be done there in order to slim those images down.
+    - CI/CD practices can be employed here depending on the delivery mechanism
+    and also the addition of appropriate Github Actions (or workflows).
     - If more elaborate DL models were to be built, then one valid concern 
     would be on the latency when querying the model through a web service.
         - Here, gRPC is preferred over REST protocol.
