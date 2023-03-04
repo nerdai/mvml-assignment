@@ -40,7 +40,6 @@ def train():
 
     model.fit(train_df.text, train_df.label)
     print("model weights:", model['clf'].coef_, "\n") # pylint: disable=no-member
-    print("model weights:", model['clf'].coef_, "\n")
 
     # metrics
     preds = model.predict(train_df.text)
