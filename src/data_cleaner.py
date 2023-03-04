@@ -14,7 +14,13 @@ def data_cleaner():
     """
     raw_df = pd.read_csv("./data/fake_news/train.csv")
     # remove observations with text as nan
-    raw_df[~raw_df["text"].isna()].to_csv("./data/fake_news/clean_train.csv")
+    clean_train = raw_df[~raw_df["text"].isna()]
+    # dedup observations with repeated `(text, label)` pairs
+    clean_deduped = pd.concat([
+        clean_train[~clean_train[['text', 'label']].duplicated(keep=False)],
+        clean_train[clean_train[['text', 'label']].duplicated(keep='last')]
+    ], axis=0)
+    clean_deduped.to_csv("./data/fake_news/clean_train.csv")
 
 
 if __name__ == "__main__":

@@ -33,8 +33,8 @@ def train():
     model = Pipeline([
         ('vect', CountVectorizer()),
         ('tfidf', TfidfTransformer()),
-        ('clf', SGDClassifier(loss='hinge', penalty='l2',
-                              alpha=1e-3, random_state=RANDOM_SEED,
+        ('clf', SGDClassifier(loss='log_loss', penalty='elasticnet',
+                              alpha=2e-3, random_state=RANDOM_SEED,
                               max_iter=5, tol=None)),
     ])
 

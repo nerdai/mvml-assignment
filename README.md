@@ -3,11 +3,11 @@ Listed below are the high-level descriptions taken to build the ML model.
 
 1. Training data was filtered to remove any observations with empty `text` field
 2. The text field was tokenized using Bag of Words and subsequently TF-IDF
-3. An SVM model was built on top of the tokenized features.
+3. A `log_reg` model was built on top of the tokenized features.
 
 The Python library used here was `sklearn`. In particular we made use of the
 `Pipeline` constructs in order to stack the two transformers to perform the
-tokenization of step 2 as well as the final predictive SVM model.
+tokenization of step 2 as well as the final predictive log-reg model.
 
 ## The Project Structure
 ```
@@ -80,12 +80,12 @@ The current model (and pipeline) achieves the below metrics on the test set:
 ```
               precision    recall  f1-score   support
 
-           0       0.60      0.66      0.63      2339
-           1       0.70      0.63      0.66      2854
+           0       0.65      0.74      0.69      2339
+           1       0.76      0.67      0.71      2854
 
-    accuracy                           0.65      5193
-   macro avg       0.65      0.65      0.65      5193
-weighted avg       0.65      0.65      0.65      5193
+    accuracy                           0.70      5193
+   macro avg       0.70      0.71      0.70      5193
+weighted avg       0.71      0.70      0.70      5193
 ```
 
 ## Commands

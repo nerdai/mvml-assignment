@@ -8,9 +8,9 @@ top opportunities to drive the system forward in a meaningful way.
 building classification models on text data: 
     - tokenize text (and filtering out stopwords), followed by some additional 
     processing to prepare them as inputs forthe classifation head
-- The ML model used for this project was SVM with l2 regularization. A Naive's
-Bayes Classifier was also tested, but the SVM was chosen due its slightly
-superiour performance.
+- The ML model used for this project was log-reg with elasticnet regularization. 
+A Naive's Bayes Classifier, and an SVM were also tested, but the log-reg was 
+chosen due its slightly superior performance.
     - The overall performance of the model is fair, and likely can be improved
     upon. Though as mentioned in the assignment doc, this was activity was not
     de-prioritized in lieu of building an effective end-to-end pipeline.
@@ -36,8 +36,10 @@ predicted).
 `sklearn.feature_extraction.text` module.
     - These perform bag-of-words tokenization and tf-idf normalization so as to
     not have too high of average counts problem with longer texts.
-- In terms of cleaning the data, only removal of the entries with `text` as null
-were removed.
+- In terms of cleaning the data, the following steps were taken:
+    - removal of the entries with `text` as null
+    - removal of entries with `text` as whitespace(s)
+    - removal of entries with replicated pairs of `(text, label)`
 - Also, only the `text` columns feature was used to train the ML model, which
 was based upon the intuition that this feature was likely the one carrying the
 most rich relationship to the `label` column (compared to `title` and `author`).
