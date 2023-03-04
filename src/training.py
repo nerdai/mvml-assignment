@@ -19,6 +19,7 @@ from sklearn import metrics
 from sklearn.pipeline import Pipeline
 from utils.data_loader import data_loader
 
+RANDOM_SEED = 42
 
 def train():
     """
@@ -33,11 +34,12 @@ def train():
         ('vect', CountVectorizer()),
         ('tfidf', TfidfTransformer()),
         ('clf', SGDClassifier(loss='hinge', penalty='l2',
-                              alpha=1e-3, random_state=42,
+                              alpha=1e-3, random_state=RANDOM_SEED,
                               max_iter=5, tol=None)),
     ])
 
     model.fit(train_df.text, train_df.label)
+    print("model weights:", model['clf'].coef_, "\n")
 
     # metrics
     preds = model.predict(train_df.text)
