@@ -72,7 +72,7 @@ modules.
 reproducibility.
 - `COMMENTARY.md` contains discussions around the requested topics (i.e., on
 overall approach, preprocessing, performance and metrics, and aspects that
-can be improves).
+can be improved).
 
 #### Model Performance
 The current model (and pipeline) achieves the below metrics on the test set:
