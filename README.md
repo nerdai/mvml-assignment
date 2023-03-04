@@ -1,7 +1,8 @@
 # Overview
 Listed below are the high-level descriptions taken to build the ML model.
 
-1. Training data was filtered to remove any observations with empty `text` field
+1. Training data clean by filtering records with either empty `text` or `text`
+as whitespace, and deduped based on the `(text, label)` pair.
 2. The text field was tokenized using Bag of Words and subsequently TF-IDF
 3. A `log_reg` model was built on top of the tokenized features.
 
