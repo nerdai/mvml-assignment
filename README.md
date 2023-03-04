@@ -26,6 +26,7 @@ mvml-assignment/
         training.py
     tests/
         __init__.py
+        test_mvml_assignment.py
     utils/
         data_loader.py
         __init__.py
@@ -57,6 +58,8 @@ to make batch predictions that are stored in local in the `artifacts/preds`
 directory.
 - `get_metrics.py` takes a `predictions.csv` file and `labels.csv` and produces
 the classification report.
+- `test_mvml_assignment.py` contains some unit test for the package and its
+modules.
 - `Dockerfile` for dockerize'ing the ML model for ease of deployment and
 reproducibility.
 - `COMMENTARY.md` contains discussions around the requested topics (i.e., on
