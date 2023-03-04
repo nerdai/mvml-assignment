@@ -19,7 +19,7 @@ the `Pipelines` class of `sklearn.preprocessing`.
     - These objects have a typical sklearn API and can be easily saved into a
     binary after training.
 - In order to promote reproducibility and portability of the model and pipeline,
-the package has been Dockerized.
+the package has been Dockerized (and random state set to `SGDClassifier`).
 - Standing up a service for the ML model was not considered here, though it's 
 understood that this step can be made straightforward with the use of tools 
 such as FastAPI, Kubernetes etc.
