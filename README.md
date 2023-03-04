@@ -57,7 +57,7 @@ to make batch predictions that are stored in local in the `artifacts/preds`
 directory.
 - `get_metrics.py` takes a `predictions.csv` file and `labels.csv` and produces
 the classification report.
-- `Dockerfile` used dockerize the ML model for ease of deployment and
+- `Dockerfile` for dockerize'ing the ML model for ease of deployment and
 reproducibility.
 - `COMMENTARY.md` contains discussions around the requested topics (i.e., on
 overall approach, preprocessing, performance and metrics, and aspects that
