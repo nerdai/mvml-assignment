@@ -9,6 +9,8 @@ The Python library used here was `sklearn`. In particular we made use of the
 `Pipeline` constructs in order to stack the two transformers to perform the
 tokenization of step 2 as well as the final predictive log-reg model.
 
+![image](https://user-images.githubusercontent.com/92402603/222918732-74131524-5c16-4cd4-aa32-333befe4b860.png)
+
 ## The Project Structure
 ```
 mvml-assignment
