@@ -85,6 +85,11 @@ complete pipeline.
     and modelling techniques) could be set up in an autoML kind of fashion.
         - Custom built tools can be written here or, if appropriate tools like
         MLFlow and Weights and Biases can be used.
+    - We also probably want to log a few things:
+        - the model weights
+        - the training performances
+        - etc. 
+            - these can be stored in AWS S3 for example using AWS SDK
     - The Docker image is a bit clunky, and there are further optmizations that
     can be done there in order to slim those images down.
     - CI/CD practices can be employed here depending on the delivery mechanism
