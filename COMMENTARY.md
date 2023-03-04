@@ -1,3 +1,8 @@
+What follows below are some of my comments around the discussion topics that 
+were prompted in the assignment doc. I acknowledge that this set is likely not
+exhaustive, but I hope it represents a good starting point to identifying the
+top opportunities to drive the system forward in a meaningful way.
+
 ## On the overall approach
 - What has been adopted here is widely understood as the standard approach to
 building classification models on text data: 
