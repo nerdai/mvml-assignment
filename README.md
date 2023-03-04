@@ -75,9 +75,23 @@ overall approach, preprocessing, performance and metrics, and aspects that
 can be improved).
 
 #### Model Performance
-The current model (and pipeline) achieves the below metrics on the test set:
+The current model (and pipeline) achieves the below metrics on the
+training and test set, respectively:
 
 ```
+-----------------------TRAINING----------------------
+              precision    recall  f1-score   support
+
+           0       0.83      0.82      0.83     10387
+           1       0.82      0.82      0.82     10218
+
+    accuracy                           0.82     20605
+   macro avg       0.82      0.82      0.82     20605
+weighted avg       0.82      0.82      0.82     20605
+```
+
+```
+-----------------------TEST--------------------------
               precision    recall  f1-score   support
 
            0       0.65      0.74      0.69      2339
