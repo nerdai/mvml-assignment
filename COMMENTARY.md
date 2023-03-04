@@ -80,7 +80,7 @@ complete pipeline.
         the relation of `author` nodes between the `articles` would carry some
         relevant information to the downstream classification task.
 
-- In terms of modelling pipeline:
+- In terms of modelling pipeline development:
     - Automation and tracking of experiments (i.e., different parameter settings
     and modelling techniques) could be set up in an autoML kind of fashion.
         - Custom built tools can be written here or, if appropriate tools like
@@ -89,6 +89,7 @@ complete pipeline.
     can be done there in order to slim those images down.
     - CI/CD practices can be employed here depending on the delivery mechanism
     and also the addition of appropriate Github Actions (or workflows).
+    - Could probably benefit in adding more unit tests to this module as well. 
     - If more elaborate DL models were to be built, then one valid concern 
     would be on the latency when querying the model through a web service.
         - Here, gRPC is preferred over REST protocol.
