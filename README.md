@@ -59,7 +59,7 @@ mvml-assignment
 ² `data` directory and its data files need to be placed within this structure
 to be able to run the pipeline.
 
-#### Summmary of Code
+#### Summary of Code
 - `data_cleaner.py` is used to filter out the bad training observations from the
 `train.df` and store the resulting DataFrame as a `clean_train.csv`.
 - `training.py` fits the sklearn `Pipeline` on the `clean_train.csv` and dumps
